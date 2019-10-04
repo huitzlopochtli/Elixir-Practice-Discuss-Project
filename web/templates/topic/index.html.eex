@@ -8,7 +8,7 @@
 			<%= link to: topic_path(@conn, :edit, topic), class: "btn" do %>
 				Edit 
 			<% end %> | 
-			<%= link to: topic_path(@conn, :delete, topic), class: "btn red" do %>
+			<%= link to: topic_path(@conn, :delete, topic), method: :delete, class: "btn red" do %>
 				Delete 
 			<% end %>
 		</div>
