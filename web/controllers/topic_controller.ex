@@ -36,16 +36,17 @@ defmodule Discuss.TopicController do
   end
 
   def update(conn, %{"topic" => topic, "id" => id}) do
-    chanageset = Repo.get(Topic, id) |> Topic.changeset(topic)
+    old_topic = Repo.get(Topic, id)
+    changeset = Topic.changeset(old_topic, topic)
 
-    case Repo.update(chanageset) do
-      {:ok, _new_topic} ->
+    case Repo.update(changeset) do
+      {:ok, new_topic} ->
         conn
-        |> put_flash(:info, "Topic updated")
+        |> put_flash(:info, "Topic updated to #{new_topic.title}" )
         |> redirect(to: topic_path(conn, :index))
 
-        {:error, chanageset}
-        |> render(conn, "edit.html", chanageset: chanageset, topic: topic)
+      {:error, changeset} ->
+        render(conn, "edit.html", changeset: changeset, topic: old_topic)
     end
   end
 end
