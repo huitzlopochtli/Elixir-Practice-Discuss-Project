@@ -23,6 +23,7 @@ defmodule Discuss.TopicController do
         |> redirect(to: topic_path(conn, :index))
 
       {:error, changeset} ->
+        IO.inspect(changeset)
         render(conn, "new.html", changeset: changeset)
     end
   end
