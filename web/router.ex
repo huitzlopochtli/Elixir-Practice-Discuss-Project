@@ -18,14 +18,19 @@ defmodule Discuss.Router do
 
 
     get "/", TopicController, :index
+    resources("/topic", TopicController)
     # get "/topic", TopicController, :index
     # get "/topic/new", TopicController, :new
     # post "/topic", TopicController, :create
     # get "/topic/:id/edit", TopicController, :edit
     # put "/topic/:id", TopicController, :update
+  end
 
-    resources("/topic", TopicController)
+  scope "/auth", Discuss do
+    pipe_through :browser
 
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.
