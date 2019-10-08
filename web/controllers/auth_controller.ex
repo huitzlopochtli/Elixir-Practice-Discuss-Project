@@ -1,12 +1,13 @@
 defmodule Discuss.AuthController do
   use Discuss.Web, :controller
-  plug Ueberauth
+  plug(Ueberauth)
 
   def callback(conn, params) do
     IO.puts("++++++++")
-    IO.puts(conn.assigns)
+    IO.inspect(conn, pretty: true)
     IO.puts("++++++++")
-    IO.puts(params)
+    IO.inspect(params, pretty: true)
     IO.puts("++++++++")
+    redirect(conn, to: "/")
   end
 end
