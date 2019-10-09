@@ -25,6 +25,7 @@ defmodule Discuss.Router do
     # post "/topic", TopicController, :create
     # get "/topic/:id/edit", TopicController, :edit
     # put "/topic/:id", TopicController, :update
+    get "/auth/signout", TopicController, :signout
   end
 
   scope "/auth", Discuss do
@@ -32,7 +33,6 @@ defmodule Discuss.Router do
 
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
-    get "/signout", AuthController, :signout
   end
 
   # Other scopes may use custom stacks.

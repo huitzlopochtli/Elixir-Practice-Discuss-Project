@@ -3,9 +3,11 @@ defmodule Discuss.TopicController do
 
   alias Discuss.Topic
 
-  plug Discuss.Plugs.RequireAuth when action in [:create, :new, :edit, :update, :delete]
+  plug(Discuss.Plugs.RequireAuth when action in [:create, :new, :edit, :update, :delete])
+  plug(:check_topic_owner when action in [:update, :edit, :delete])
 
   def index(conn, _params) do
+    user = conn.assigns.user
     topics = Repo.all(Topic)
     render(conn, "index.html", topics: topics)
   end
@@ -16,7 +18,11 @@ defmodule Discuss.TopicController do
   end
 
   def create(conn, %{"topic" => topic}) do
-    changeset = Topic.changeset(%Topic{}, topic)
+    # conn.assigns[:user]
+    changeset =
+      conn.assigns.user
+      |> build_assoc(:topics)
+      |> Topic.changeset(topic)
 
     case Repo.insert(changeset) do
       {:ok, _topic} ->
@@ -53,10 +59,28 @@ defmodule Discuss.TopicController do
   end
 
   def delete(conn, %{"id" => id}) do
-    Repo.get!(Topic, id) |> Repo.delete!
+    Repo.get!(Topic, id) |> Repo.delete!()
 
     conn
     |> put_flash(:info, "Deleted!!")
     |> redirect(to: topic_path(conn, :index))
+  end
+
+  def check_topic_owner(conn, _params) do
+    %{params: %{"id" => topic_id}} = conn
+
+    if Repo.get(Topic, topic_id).user_id == conn.assigns.user.id do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You are not authorized to edit this page.")
+      |> redirect(to: topic_path(conn, :index))
+      |> halt()
+    end
+  end
+
+  def signout(conn, _params) do
+    clear_session(conn)
+    redirect(conn, to: topic_path(conn, :index))
   end
 end

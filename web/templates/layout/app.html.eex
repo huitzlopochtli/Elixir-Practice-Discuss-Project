@@ -22,9 +22,9 @@
           <a href="/" class="brand-logo">Discussions</a>
 
           <ul class="right">
-            <%= if @conn.assigns[:user] do %>
+            <%= if @conn.assigns[:user] != nil do %>
               <li>
-                <a href="/auth/logout" class="brand-logo">Logout</a>
+                <a href="/auth/signout" class="brand-logo">Logout</a>
               </li>
             <% else %>
               <li> 
