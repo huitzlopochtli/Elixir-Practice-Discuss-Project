@@ -20,7 +20,20 @@
       <nav class="light-blue">
         <div class="nav-wrapper container">
           <a href="/" class="brand-logo">Discussions</a>
+
+          <ul class="right">
+            <%= if @conn.assigns[:user] do %>
+              <li>
+                <a href="/auth/logout" class="brand-logo">Logout</a>
+              </li>
+            <% else %>
+              <li> 
+                  <%= link "Sign in using Github", to: auth_path(@conn, :request, "github") %>
+              </li>
+            <% end %>
         </div>
+          </ul>
+          
       </nav>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

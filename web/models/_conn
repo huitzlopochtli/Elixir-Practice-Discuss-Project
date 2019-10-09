@@ -1,0 +1,202 @@
+%Plug.Conn{
+  assigns: %{
+    ueberauth_auth: %Ueberauth.Auth{
+      credentials: %Ueberauth.Auth.Credentials{
+        expires: false,
+        expires_at: nil,
+        other: %{},
+        refresh_token: nil,
+        scopes: ["public_repo", "user"],
+        secret: nil,
+        token: "bbb6b51ce83c67246fbe42d7b61e9b9f445c12ce",
+        token_type: "Bearer"
+      },
+      extra: %Ueberauth.Auth.Extra{
+        raw_info: %{
+          token: %OAuth2.AccessToken{
+            access_token: "bbb6b51ce83c67246fbe42d7b61e9b9f445c12ce",
+            expires_at: nil,
+            other_params: %{"scope" => "public_repo,user"},
+            refresh_token: nil,
+            token_type: "Bearer"
+          },
+          user: %{
+            "collaborators" => 0,
+            "two_factor_authentication" => false,
+            "company" => "Advancer Inc. Japan",
+            "bio" => "https://peeyalk.github.io/portfolio/",
+            "following" => 2,
+            "followers_url" => "https://api.github.com/users/peeyalk/followers",
+            "public_gists" => 0,
+            "id" => 17343278,
+            "avatar_url" => "https://avatars0.githubusercontent.com/u/17343278?v=4",
+            "events_url" => "https://api.github.com/users/peeyalk/events{/privacy}",
+            "starred_url" => "https://api.github.com/users/peeyalk/starred{/owner}{/repo}",
+            "emails" => [
+              %{
+                "email" => "peeyalk@hotmail.com",
+                "primary" => true,
+                "verified" => true,
+                "visibility" => "public"
+              },
+              %{
+                "email" => "khondokar.hash@gmail.com",
+                "primary" => false,
+                "verified" => true,
+                "visibility" => nil
+              },
+              %{
+                "email" => "17343278+peeyalk@users.noreply.github.com",
+                "primary" => false,
+                "verified" => true,
+                "visibility" => nil
+              }
+            ],
+            "private_gists" => 0,
+            "blog" => "www.facebook.com/khondokar-hash",
+            "subscriptions_url" => "https://api.github.com/users/peeyalk/subscriptions",
+            "type" => "User",
+            "disk_usage" => 79280,
+            "site_admin" => false,
+            "owned_private_repos" => 0,
+            "public_repos" => 35,
+            "location" => "Tokyo, Japan",
+            "hireable" => true,
+            "created_at" => "2016-02-19T18:53:40Z",
+            "name" => "Khondokar Hashibul Islam Peeyal (PK)",
+            "organizations_url" => "https://api.github.com/users/peeyalk/orgs",
+            "gists_url" => "https://api.github.com/users/peeyalk/gists{/gist_id}",
+            "following_url" => "https://api.github.com/users/peeyalk/following{/other_user}",
+            "url" => "https://api.github.com/users/peeyalk",
+            "email" => nil,
+            "login" => "peeyalk",
+            "html_url" => "https://github.com/peeyalk",
+            "gravatar_id" => "",
+            "received_events_url" => "https://api.github.com/users/peeyalk/received_events",
+            "repos_url" => "https://api.github.com/users/peeyalk/repos",
+            "plan" => %{
+              "collaborators" => 0,
+              "name" => "free",
+              "private_repos" => 10000,
+              "space" => 976562499
+            },
+            "node_id" => "MDQ6VXNlcjE3MzQzMjc4",
+            "followers" => 1,
+            "updated_at" => "2019-09-20T04:37:30Z",
+            "total_private_repos" => 0
+          }
+        }
+      },
+      info: %Ueberauth.Auth.Info{
+        description: "https://peeyalk.github.io/portfolio/",
+        email: "peeyalk@hotmail.com",
+        first_name: nil,
+        image: "https://avatars0.githubusercontent.com/u/17343278?v=4",
+        last_name: nil,
+        location: "Tokyo, Japan",
+        name: "Khondokar Hashibul Islam Peeyal (PK)",
+        nickname: "peeyalk",
+        phone: nil,
+        urls: %{
+          api_url: "https://api.github.com/users/peeyalk",
+          avatar_url: "https://avatars0.githubusercontent.com/u/17343278?v=4",
+          blog: "www.facebook.com/khondokar-hash",
+          events_url: "https://api.github.com/users/peeyalk/events{/privacy}",
+          followers_url: "https://api.github.com/users/peeyalk/followers",
+          following_url: "https://api.github.com/users/peeyalk/following{/other_user}",
+          gists_url: "https://api.github.com/users/peeyalk/gists{/gist_id}",
+          html_url: "https://github.com/peeyalk",
+          organizations_url: "https://api.github.com/users/peeyalk/orgs",
+          received_events_url: "https://api.github.com/users/peeyalk/received_events",
+          repos_url: "https://api.github.com/users/peeyalk/repos",
+          starred_url: "https://api.github.com/users/peeyalk/starred{/owner}{/repo}",
+          subscriptions_url: "https://api.github.com/users/peeyalk/subscriptions"
+        }
+      },
+      provider: :github,
+      strategy: Ueberauth.Strategy.Github,
+      uid: 17343278
+    }
+  },
+  before_send: [#Function<0.122225743/1 in Plug.CSRFProtection.call/2>,
+   #Function<3.101935832/1 in Phoenix.Controller.fetch_flash/2>,
+   #Function<0.131550558/1 in Plug.Session.before_send/2>,
+   #Function<1.20352387/1 in Plug.Logger.call/2>,
+   #Function<0.127200512/1 in Phoenix.LiveReloader.before_send_inject_reloader/2>],
+  body_params: %{},
+  cookies: %{
+    "_discuss_key" => "SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYK1p4T3Q0YXZPQ0V6T1RhV21YWjVqdz09._hoHdEbiltZK0LLEquw4amt8-LIew6IxPyf9ZFliX_8"
+  },
+  halted: false,
+  host: "localhost",
+  method: "GET",
+  owner: #PID<0.451.0>,
+  params: %{"code" => "69ca136dc44996bfa9c3", "provider" => "github"},
+  path_info: ["auth", "github", "callback"],
+  path_params: %{},
+  peer: {{127, 0, 0, 1}, 52393},
+  port: 4000,
+  private: %{
+    Discuss.Router => {[], %{}},
+    :github_token => nil,
+    :github_user => nil,
+    :phoenix_action => :callback,
+    :phoenix_controller => Discuss.AuthController,
+    :phoenix_endpoint => Discuss.Endpoint,
+    :phoenix_flash => %{},
+    :phoenix_format => "html",
+    :phoenix_layout => {Discuss.LayoutView, :app},
+    :phoenix_pipelines => [:browser],
+    :phoenix_route => #Function<4.65069576/1 in Discuss.Router.match_route/4>,
+    :phoenix_router => Discuss.Router,
+    :phoenix_view => Discuss.AuthView,
+    :plug_session => %{"_csrf_token" => "+ZxOt4avOCEzOTaWmXZ5jw=="},
+    :plug_session_fetch => :done,
+    :ueberauth_request_options => %{
+      callback_methods: ["GET"],
+      callback_params: nil,
+      callback_path: "/auth/github/callback",
+      callback_url: nil,
+      options: [default_scope: "user,public_repo"],
+      request_path: "/auth/github",
+      strategy: Ueberauth.Strategy.Github,
+      strategy_name: :github
+    }
+  },
+  query_params: %{"code" => "69ca136dc44996bfa9c3"},
+  query_string: "code=69ca136dc44996bfa9c3",
+  remote_ip: {127, 0, 0, 1},
+  req_cookies: %{
+    "_discuss_key" => "SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYK1p4T3Q0YXZPQ0V6T1RhV21YWjVqdz09._hoHdEbiltZK0LLEquw4amt8-LIew6IxPyf9ZFliX_8"
+  },
+  req_headers: [
+    {"host", "localhost:4000"},
+    {"connection", "keep-alive"},
+    {"upgrade-insecure-requests", "1"},
+    {"user-agent",
+     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"},
+    {"sec-fetch-mode", "navigate"},
+    {"accept",
+     "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3"},
+    {"sec-fetch-site", "cross-site"},
+    {"accept-encoding", "gzip, deflate, br"},
+    {"accept-language", "en-US,en;q=0.9"},
+    {"cookie",
+     "_discuss_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYK1p4T3Q0YXZPQ0V6T1RhV21YWjVqdz09._hoHdEbiltZK0LLEquw4amt8-LIew6IxPyf9ZFliX_8"}
+  ],
+  request_path: "/auth/github/callback",
+  resp_body: nil,
+  resp_cookies: %{},
+  resp_headers: [
+    {"cache-control", "max-age=0, private, must-revalidate"},
+    {"x-request-id", "hqqq4veqohi89po1mfeiebl6nhn86nmh"},
+    {"x-frame-options", "SAMEORIGIN"},
+    {"x-xss-protection", "1; mode=block"},
+    {"x-content-type-options", "nosniff"}
+  ],
+  scheme: :http,
+  script_name: [],
+  secret_key_base: "OE+zizeWKnUGpHOfLiRrGcjUMnvPvvC0F3+wZ6/heD8X+h1UBO9vrVEs/njSacIu",
+  state: :unset,
+  status: nil
+
